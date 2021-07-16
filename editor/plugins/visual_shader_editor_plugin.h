@@ -218,6 +218,7 @@ class VisualShaderEditor : public VBoxContainer {
 		SEPARATOR3, // ignore
 		SET_COMMENT_TITLE,
 		SET_COMMENT_DESCRIPTION,
+		ARRANGE_NODES,
 	};
 
 	Tree *members;

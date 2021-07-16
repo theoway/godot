@@ -3494,6 +3494,9 @@ void VisualShaderEditor::_node_menu_id_pressed(int p_idx) {
 		case NodeMenuOptions::SET_COMMENT_DESCRIPTION:
 			_comment_desc_popup_show(get_global_mouse_position(), selected_comment);
 			break;
+		case NodeMenuOptions::ARRANGE_NODES: {
+			graph->arrange_nodes();
+		} break;
 		default:
 			break;
 	}
@@ -3869,6 +3872,7 @@ VisualShaderEditor::VisualShaderEditor() {
 	popup_menu->add_item(TTR("Paste"), NodeMenuOptions::PASTE);
 	popup_menu->add_item(TTR("Delete"), NodeMenuOptions::DELETE);
 	popup_menu->add_item(TTR("Duplicate"), NodeMenuOptions::DUPLICATE);
+	popup_menu->add_item(TTR("Arrange Nodes"), NodeMenuOptions::ARRANGE_NODES);
 	popup_menu->connect("id_pressed", callable_mp(this, &VisualShaderEditor::_node_menu_id_pressed));
 
 	///////////////////////////////////////
